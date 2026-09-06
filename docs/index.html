@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Gas Monitor 烧录工作台</title>
+  <script type="module" src="https://unpkg.com/esp-web-tools@10/dist/web/install-button.js?module"></script>
+  <style>
+    :root{--background:#faf9f5;--foreground:#3d3929;--card:#fff;--primary:#c96442;--muted:#ede9de;--muted-fg:#77756e;--border:#dad9d4;--radius:8px}*{box-sizing:border-box}body{margin:0;background:var(--background);color:var(--foreground);font-family:Inter,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}main{width:min(780px,calc(100% - 24px));margin:auto;padding:34px 0}h1{margin:0 0 8px;font-size:26px}.sub{margin:0 0 22px;color:var(--muted-fg)}.panel{margin-bottom:14px;padding:20px;border:1px solid var(--border);border-radius:var(--radius);background:var(--card)}h2{margin:0 0 12px;font-size:16px}.install{border:0;border-radius:6px;background:var(--primary);color:#fff;padding:11px 16px;font-size:14px;font-weight:750;cursor:pointer}.unsupported{display:block;color:#a13d2d;font-size:13px;line-height:1.6}.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.wire{padding:12px;border:1px solid var(--border);border-radius:6px;background:var(--background);font:12px/1.7 Consolas,monospace}.note{margin:12px 0 0;color:var(--muted-fg);font-size:12px;line-height:1.65}ol{margin:0;padding-left:22px;font-size:13px;line-height:1.9}@media(max-width:600px){main{padding-top:22px}.grid{grid-template-columns:1fr}}
+  </style>
+</head>
+<body><main>
+  <h1>Gas Monitor 烧录工作台</h1><p class="sub">ESP32-S3 · TVOC-301 · SSD1306 · v0.1.0</p>
+  <section class="panel"><h2>一键烧录</h2><esp-web-install-button manifest="manifest.json"><button class="install" slot="activate">连接 ESP32-S3 并烧录</button><span class="unsupported" slot="unsupported">当前浏览器不支持 Web Serial。请使用电脑端最新版 Google Chrome 或 Microsoft Edge。</span></esp-web-install-button><p class="note">选择新出现的 USB/JTAG、CH34x 或 CP210x 串口；不要选择蓝牙 COM25/COM26。</p></section>
+  <section class="panel"><h2>接线</h2><div class="grid"><div class="wire">TVOC-301<br>GND → GND<br>5V → 5V/VBUS<br>SDA/TX → GPIO5<br>AIO/SCL 不接</div><div class="wire">SSD1306 SPI OLED<br>GND → GND<br>VCC → 3V3<br>SCL → GPIO12<br>SDA → GPIO11<br>RES → GPIO10<br>DC → GPIO9</div></div></section>
+  <section class="panel"><h2>烧录后</h2><ol><li>手机连接 <strong>GasMonitor-XXXX</strong>，密码 <strong>gasmonitor</strong>。</li><li>打开 <strong>http://192.168.4.1</strong>。</li><li>OLED 和网页同时显示 HCHO、TVOC、估算 eCO₂。</li></ol></section>
+  <section class="panel"><h2>电脑没有识别串口</h2><ol><li>换到开发板另一个 USB-C 口。</li><li>更换已确认支持数据传输的 USB 线。</li><li>按住 BOOT，点按 RST，再松开 BOOT。</li></ol></section>
+</main></body></html>

@@ -1,0 +1,15 @@
+{
+  "name": "Gas Monitor",
+  "version": "0.1.0",
+  "new_install_prompt_erase": false,
+  "builds": [
+    {
+      "chipFamily": "ESP32-S3",
+      "parts": [
+        { "path": "firmware/bootloader.bin", "offset": 0 },
+        { "path": "firmware/partition-table.bin", "offset": 32768 },
+        { "path": "firmware/gas_monitor.bin", "offset": 65536 }
+      ]
+    }
+  ]
+}

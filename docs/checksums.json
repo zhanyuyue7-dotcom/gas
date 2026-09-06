@@ -1,0 +1,5 @@
+{
+  "firmware/bootloader.bin": "60e6f939a19881d94c62aff623df5f73f41d9153e09a062f1b40722fed55383a",
+  "firmware/partition-table.bin": "c9a826e85500d14d1854ce78e47452d4614a1be371bbd056278d2cb3398fbbfd",
+  "firmware/gas_monitor.bin": "67c3aadd2e840d0be96be8c40723d21e9b3ca794555e4a54f0ae9779aa9ccd53"
+}
